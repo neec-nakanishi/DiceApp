@@ -5,7 +5,6 @@ public class Chinchiro {
 
     String[] yaku = {"ピンゾロ", "あらし:6", "あらし:5", "あらし:4", "あらし:3", "あらし:2", "シゴロ","目:6", "目:5", "目:4", "目:3", "目:2", "目:1","役無し", "ヒフミ"};
 
-
     Chinchiro() {
         dices = new Dice[3];
         for (int i = 0; i < dices.length; i++) {
@@ -24,6 +23,7 @@ public class Chinchiro {
         ko.turn(dices);
         int koResult = judge(dices);
 
+        // 結果を表示
         System.out.println("親の結果: " + yaku[oyaResult]);
         System.out.println("子の結果: " + yaku[koResult]);
         if (oyaResult==koResult) {
