@@ -18,14 +18,17 @@ public class Chinchiro {
         // 親がサイコロを振る
         oya.turn(dices);
         int oyaResult = judge(dices);
+        System.out.println(yaku[oyaResult]);
+        System.out.println();
+
 
         //　子がサイコロを振る
         ko.turn(dices);
         int koResult = judge(dices);
+        System.out.println(yaku[koResult]);
+        System.out.println();
 
         // 結果を表示
-        System.out.println("親の結果: " + yaku[oyaResult]);
-        System.out.println("子の結果: " + yaku[koResult]);
         if (oyaResult==koResult) {
             System.out.println("引き分け");
         }
