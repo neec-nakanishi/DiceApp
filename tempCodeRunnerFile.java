@@ -1,1 +1,1 @@
-        d1.roll();
+        scan.close();

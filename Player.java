@@ -16,6 +16,5 @@ public class Player {
             System.out.print(dices[i].me + " ");
         }
         System.out.println();
-        scan.close();
     }
 }
