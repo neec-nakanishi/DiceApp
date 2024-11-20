@@ -41,13 +41,13 @@ public class Chinchiro {
 
         // 結果を表示
         if (oyaResult==koResult) {
-            System.out.println("引き分け");
+            System.out.println("【引き分け】");
         }
         else if (oyaResult<koResult) {
-            System.out.println("親の勝ち");
+            System.out.println("【親の勝ち】");
         }
         else {
-            System.out.println("子の勝ち");
+            System.out.println("【子の勝ち】");
         }
     }
 
