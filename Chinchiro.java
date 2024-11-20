@@ -49,6 +49,7 @@ public class Chinchiro {
         else {
             System.out.println("【子の勝ち】");
         }
+        System.err.println();
     }
 
     int judge(Dice[] d) {
