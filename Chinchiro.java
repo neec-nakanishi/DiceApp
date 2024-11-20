@@ -16,15 +16,26 @@ public class Chinchiro {
 
     void start() {
         // 親がサイコロを振る
-        oya.turn(dices);
-        int oyaResult = judge(dices);
+        int oyaResult = 13;
+        for (int i=0; i<3; i++) {
+            oya.turn(dices);
+            oyaResult = judge(dices);
+            if (oyaResult!=13) {
+                break;
+            }
+        }
         System.out.println(yaku[oyaResult]);
-        System.out.println();
-
+        System.out.println();    
 
         //　子がサイコロを振る
-        ko.turn(dices);
         int koResult = judge(dices);
+        for (int i=0; i<3; i++) {
+            ko.turn(dices);
+            koResult = judge(dices);
+            if (koResult!=13) {
+                break;
+            }
+        }
         System.out.println(yaku[koResult]);
         System.out.println();
 
