@@ -1,5 +1,5 @@
 public class Dice {
-    int me;
+    int me = 1;
 
     public void roll() {
         me = (int) (Math.random() * 6) + 1;
