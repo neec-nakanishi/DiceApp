@@ -17,6 +17,7 @@ public class Chinchiro {
     void start() {
         // 親がサイコロを振る
         int oyaResult = 13;
+        System.err.print(oya.name+"の番");
         for (int i=0; i<3; i++) {
             oya.turn(dices);
             oyaResult = judge(dices);
@@ -24,10 +25,12 @@ public class Chinchiro {
                 break;
             }
         }
+        System.out.println();
         System.out.println(yaku[oyaResult]);
         System.out.println();    
 
         //　子がサイコロを振る
+        System.err.print(ko.name+"の番");
         int koResult = judge(dices);
         for (int i=0; i<3; i++) {
             ko.turn(dices);
@@ -36,6 +39,7 @@ public class Chinchiro {
                 break;
             }
         }
+        System.out.println();
         System.out.println(yaku[koResult]);
         System.out.println();
 
