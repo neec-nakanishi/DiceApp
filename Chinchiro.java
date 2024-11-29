@@ -16,47 +16,35 @@ public class Chinchiro {
 
     void start() {
         // 親がサイコロを振る
-        int oyaResult = 13;
         System.err.print(oya.name+"の番");
         for (int i=0; i<3; i++) {
             oya.turn(dices);
-            oyaResult = judge(dices);
-            if (oyaResult!=13) {
+            oya.point = rank(dices);
+            if (oya.point != 13) {
                 break;
             }
         }
         System.out.println();
-        System.out.println(yaku[oyaResult]);
+        System.out.println(yaku[oya.point]);
         System.out.println();    
 
         //　子がサイコロを振る
         System.err.print(ko.name+"の番");
-        int koResult = judge(dices);
         for (int i=0; i<3; i++) {
             ko.turn(dices);
-            koResult = judge(dices);
-            if (koResult!=13) {
+            ko.point = rank(dices);
+            if (ko.point != 13) {
                 break;
             }
         }
         System.out.println();
-        System.out.println(yaku[koResult]);
+        System.out.println(yaku[ko.point]);
         System.out.println();
 
-        // 結果を表示
-        if (oyaResult==koResult) {
-            System.out.println("【引き分け】");
-        }
-        else if (oyaResult<koResult) {
-            System.out.println("【親の勝ち】");
-        }
-        else {
-            System.out.println("【子の勝ち】");
-        }
-        System.err.println();
+        judge();
     }
 
-    int judge(Dice[] d) {
+    int rank(Dice[] d) {
         // ピンゾロ
         if (d[0].me==1 && d[1].me==1 && d[2].me==1) {
             return 0;
@@ -87,5 +75,20 @@ public class Chinchiro {
         else {
             return 13;
         }
+    }
+
+    void judge() {
+        // 結果を表示
+        System.out.println("----------------");
+        if (oya.point == ko.point) {
+            System.out.println("【引き分け】");
+        }
+        else if (oya.point < ko.point) {
+            System.out.println("【親の勝ち】");
+        }
+        else {
+            System.out.println("【子の勝ち】");
+        }
+        System.out.println("----------------");
     }
 }
